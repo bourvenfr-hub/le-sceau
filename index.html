@@ -1337,9 +1337,10 @@
                 height: clamp(220px, 82vw, 340px);
             }
 
-            /* Centre du portail : inset plus serré */
+            /* Centre du portail : inset aligné sur le cercle SVG intérieur (~19% du portail).
+               Sur 320px de portail → ~61px. Corrige le "jour" visible entre le div et le SVG. */
             .gate-center {
-                inset: clamp(38px, 8vw, 62px);
+                inset: clamp(55px, 10.5vw, 72px);
                 gap: clamp(8px, 1.5vw, 14px);
                 padding: clamp(14px, 3vw, 24px);
             }
@@ -1403,6 +1404,23 @@
                Override en scroll → background visible sur iPhone. */
             .scene-background {
                 background-attachment: scroll !important;
+                background-position: center 30%;
+            }
+
+            /* Lune : repositionnée hors zone portail en portrait.
+               right:20% sur desktop chevauche le portail sur 390px de large. */
+            .moon {
+                top: 2%;
+                right: 3%;
+                width: clamp(35px, 7vw, 50px);
+                height: clamp(35px, 7vw, 50px);
+            }
+
+            /* Sol sable : hauteur réduite et perspective allégée pour éviter
+               de remonter trop haut vers le portail en format portrait. */
+            .ground-layer {
+                height: 25%;
+                transform: perspective(600px) rotateX(60deg);
             }
         }
 
