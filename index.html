@@ -1331,16 +1331,16 @@
             /* Scène : plein écran, hauteur viewport complet */
             /* .scene est fixed inset:0 — pas besoin d'override width/height */
 
-            /* Portail : réduit pour tenir dans 390px */
+            /* Portail : agrandi pour mieux couvrir le fond mobile */
             .gate-container {
-                width: clamp(220px, 82vw, 340px);
-                height: clamp(220px, 82vw, 340px);
+                width: clamp(260px, 90vw, 400px);
+                height: clamp(260px, 90vw, 400px);
             }
 
-            /* Centre du portail : inset aligné sur le cercle SVG intérieur (~19% du portail).
-               Sur 320px de portail → ~61px. Corrige le "jour" visible entre le div et le SVG. */
+            /* Centre du portail : inset aligné sur le cercle SVG intérieur (~17% du portail).
+               Sur 351px de portail (90vw@390px) → ~60px. Corrige le "jour" visible entre le div et le SVG. */
             .gate-center {
-                inset: clamp(55px, 10.5vw, 72px);
+                inset: clamp(58px, 15.5vw, 70px);
                 gap: clamp(8px, 1.5vw, 14px);
                 padding: clamp(14px, 3vw, 24px);
             }
