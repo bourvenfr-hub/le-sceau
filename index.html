@@ -1386,9 +1386,9 @@
                 margin: 6px auto;
             }
 
-            /* UI overlay padding réduit */
+            /* UI overlay : padding-top suffisant pour passer sous la barre XP fixe (~39px) */
             .ui-overlay {
-                padding: 10px 12px;
+                padding: 48px 12px 10px;
             }
 
             /* Barre XP compacte */
@@ -1422,6 +1422,17 @@
             .ground-layer {
                 height: 25%;
                 transform: perspective(600px) rotateX(60deg);
+            }
+
+            /* Stats overlay : éviter le débordement horizontal */
+            #stats-overlay .stats-content {
+                padding: 16px;
+                box-sizing: border-box;
+            }
+            /* Grille principale 2 colonnes (stats + dashboard) → 1 colonne */
+            #stats-overlay .stats-content > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
             }
         }
 
